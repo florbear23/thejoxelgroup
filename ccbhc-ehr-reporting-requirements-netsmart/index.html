@@ -1,0 +1,650 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CCBHC EHR Reporting Requirements: Configuring Your Netsmart Platform for Compliance, Clean Claims, and Quality Outcomes &#8211; The Joxel Group</title>
+<meta name='robots' content='max-image-preview:large' />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+ 
+
+<link rel='stylesheet' id='main-style-css' href='../wp-content/themes/joxelweb/style.css' media='all' />
+<link rel="canonical" href="index.html" />
+    <!-- Favicon -->
+    <link rel="icon" href="../wp-content/themes/joxelweb/assets/img/favicon.ico" sizes="any">
+    
+    <!-- Google Fonts (loaded asynchronously to avoid render-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+    
+    <!-- Schema JSON-LD -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Organization","name":"The Joxel Group, LLC","url":"../index.html","logo":"../wp-content/uploads/2026/07/Asset-1@4x.png","telephone":"(414) 800-4242","email":"info@thejoxelgroup.com","address":{"@type":"PostalAddress","streetAddress":"6737 W. Washington St., Suite 3470","addressLocality":"West Allis","addressRegion":"WI","postalCode":"53214","addressCountry":"US"},"sameAs":["https://www.linkedin.com/in/thejoxelgroupllc/","https://www.facebook.com/TheJoxelGroup/","https://twitter.com/TheJoxelGroup"]}
+    </script>
+    <link rel="icon" href="../wp-content/uploads/2026/07/cropped-joxel_logo-32x32.png" sizes="32x32" />
+<link rel="icon" href="../wp-content/uploads/2026/07/cropped-joxel_logo-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="../wp-content/uploads/2026/07/cropped-joxel_logo-180x180.png" />
+<meta name="msapplication-TileImage" content="../wp-content/uploads/2026/07/cropped-joxel_logo-270x270.png" />
+<style id="wp-custom-css">
+.single-thumb img {
+    display: none;
+    width: 127%;
+    height: auto;
+}
+
+.product-graphic img {
+    display: block;
+    width: 100%;
+    height: auto;
+     border-radius: none; 
+	box-shadow: none;
+}
+</style>
+ <!-- Importante ito para sa CSS/JS at plugins -->
+<style id="wp-block-heading-inline-css">
+h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-background,h3:where(.wp-block-heading).has-background,h4:where(.wp-block-heading).has-background,h5:where(.wp-block-heading).has-background,h6:where(.wp-block-heading).has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
+/*# sourceURL=../wp-includes/blocks/heading/style.min.css */
+</style>
+<style id="wp-block-list-inline-css">
+ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:1.25em 2.375em}
+/*# sourceURL=../wp-includes/blocks/list/style.min.css */
+</style>
+<style id="wp-block-paragraph-inline-css">
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+/*# sourceURL=../wp-includes/blocks/paragraph/style.min.css */
+</style>
+
+</head>
+<body class="wp-singular post-template-default single single-post postid-647 single-format-standard wp-theme-joxelweb">
+
+
+<div class="preloader" aria-hidden="true"><div class="pl-mark">Joxel<span class="pl-bar"></span></div></div>
+<div class="scroll-progress"></div>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="container">
+    <div class="tb-left">
+      <a href="tel:+14148004242">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        (414) 800-4242      </a>
+
+      <a href="mailto:info@thejoxelgroup.com">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        info@thejoxelgroup.com      </a>
+    </div>
+    <div class="tb-right">
+              <a href="https://www.linkedin.com/in/thejoxelgroupllc/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-13h4v2a4 4 0 0 1 2-2z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              <a href="https://www.facebook.com/TheJoxelGroup/" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+              <a href="https://twitter.com/TheJoxelGroup" target="_blank" rel="noopener" aria-label="Twitter"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M23 4.5a8.4 8.4 0 0 1-2.4.7A4.2 4.2 0 0 0 22.4 3a8.3 8.3 0 0 1-2.6 1 4.1 4.1 0 0 0-7 3.8A11.7 11.7 0 0 1 3 3.7a4.1 4.1 0 0 0 1.3 5.5A4 4 0 0 1 2.4 8.7a4.1 4.1 0 0 0 3.3 4 4.1 4.1 0 0 1-1.9.1 4.1 4.1 0 0 0 3.8 2.9A8.3 8.3 0 0 1 1 17.5a11.7 11.7 0 0 0 18-9.9c.8-.6 1.5-1.3 2-2.1z"/></svg></a>
+          </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container wide">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="../index.html" aria-label="The Joxel Group, LLC home">
+        <img src="../wp-content/uploads/2026/07/Asset-1@4x.png" alt="The Joxel Group, LLC logo" height="42" style="height:42px;width:auto">
+      </a>
+      
+            <ul class="nav-menu">
+                <li class="nav-item">
+          <a class="nav-link" href="#" data-nolink aria-haspopup="true">Start with AI or Plan Your AI<svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div class="dropdown">
+                                          <a href="../ai-strategy-governance/index.html"><span class="dot"></span>AI Strategy and Governance</a>
+                                                        <a href="../fractional-caio/index.html"><span class="dot"></span>Fractional CAIO</a>
+                                                        <a href="../fractional-cio/index.html"><span class="dot"></span>Fractional CIO / Office of CIO</a>
+                                                        <a href="../ai-readiness-assessment/index.html"><span class="dot"></span>AI Readiness Assessment</a>
+                                                        <a href="../project-management/index.html"><span class="dot"></span>AI and IT Portfolio Management</a>
+                                    </div>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link" href="#" data-nolink aria-haspopup="true">Build with AI<svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div class="dropdown">
+                                          <a href="../rapid-ai-custom-development/index.html"><span class="dot"></span>Rapid AI Custom Development</a>
+                                                        <a href="../404.html"><span class="dot"></span>AI Workflow Automation &amp; Agents</a>
+                                                        <a class="sub" href="../404.html"><span class="dot"></span>Intake, Documentation and Reporting Automation</a>
+                                                        <span class="dd-label">Development Resources</span>
+                                                        <a class="sub" href="../outsourcing-support/index.html"><span class="dot"></span>Outsourcing Support</a>
+                                                        <span class="dd-label">Joxel Products</span>
+                                                        <a class="sub" href="../harmoniq/index.html"><span class="dot"></span>Harmoniq</a>
+                                                        <a class="sub" href="../presencepro/index.html"><span class="dot"></span>PresencePro</a>
+                                                        <a class="sub" href="../data-convertkit/index.html"><span class="dot"></span>Data ConvertKit</a>
+                                    </div>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link" href="#" data-nolink aria-haspopup="true">Recover Revenue<svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div class="dropdown">
+                                          <a href="../revenue-cycle-management/index.html"><span class="dot"></span>Revenue Cycle Management</a>
+                                                        <a href="../404.html"><span class="dot"></span>AI Driven Denials &amp; AR Analytics</a>
+                                                        <a href="../404.html"><span class="dot"></span>Authorization &amp; Billing Optimization</a>
+                                                        <a href="../revenue-leakage-calculator/index.html"><span class="dot"></span>Revenue Leakage Calculator</a>
+                                    </div>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link" href="#" data-nolink aria-haspopup="true">Optimize Your EHR<svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div class="dropdown">
+                                          <span class="dd-label">Lifecycle</span>
+                                                        <a class="sub" href="../ehr-selection/index.html"><span class="dot"></span>EHR Selection</a>
+                                                        <a class="sub" href="../ehr-implementations/index.html"><span class="dot"></span>EHR Implementation</a>
+                                                        <a class="sub sub2" href="../data-convertkit/index.html"><span class="dot"></span>Data ConvertKit</a>
+                                                        <a class="sub" href="../ehr-optimization/index.html"><span class="dot"></span>EHR Optimization</a>
+                                                        <a class="sub" href="../emr-configuration/index.html"><span class="dot"></span>EHR Support &amp; Configuration</a>
+                                                        <a class="sub" href="../404.html"><span class="dot"></span>EHR Staff Augmentation</a>
+                                                        <span class="dd-label">Platforms</span>
+                                                        <a class="sub" href="../avatar-consulting/index.html"><span class="dot"></span>MyAvatar Consulting</a>
+                                                        <a class="sub" href="../evolv-consulting/index.html"><span class="dot"></span>MyEvolv Consulting</a>
+                                    </div>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link active" href="../about-us/index.html">About<svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+          <div class="dropdown">
+                                          <a href="../our-leaders/index.html"><span class="dot"></span>Our Leaders</a>
+                                                        <a href="../joxel-365/index.html"><span class="dot"></span>Joxel 365</a>
+                                                        <a href="../partnerships/index.html"><span class="dot"></span>Partnerships</a>
+                                                        <a href="../locations/index.html"><span class="dot"></span>Locations</a>
+                                                        <a href="../contact-us/index.html"><span class="dot"></span>Contact Us</a>
+                                                        <a href="../client-results/index.html"><span class="dot"></span>Client Results</a>
+                                                        <a href="../insights/index.html"><span class="dot"></span>Insights</a>
+                                    </div>
+        </li>
+              </ul>
+      
+      <div class="nav-cta">
+        <a class="btn" href="../contact-us/index.html">Get in Touch <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <span class="hamburger"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="drawer-root">
+  <div class="drawer-backdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile menu">
+    <div class="drawer-head">
+      <img src="../wp-content/uploads/2026/07/Asset-1@4x.png" alt="The Joxel Group, LLC logo" style="height:38px">
+      <button class="drawer-close nav-toggle" aria-label="Close menu"><span class="hamburger"><span></span><span></span><span></span></span></button>
+    </div>
+    
+    <nav class="drawer-nav" aria-label="Mobile primary">
+            <div class="m-group">
+        <button class="m-top">Start with AI or Plan Your AI<svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="m-sub">
+                                    <a href="../ai-strategy-governance/index.html">AI Strategy and Governance</a>
+                                                <a href="../fractional-caio/index.html">Fractional CAIO</a>
+                                                <a href="../fractional-cio/index.html">Fractional CIO / Office of CIO</a>
+                                                <a href="../ai-readiness-assessment/index.html">AI Readiness Assessment</a>
+                                                <a href="../project-management/index.html">AI and IT Portfolio Management</a>
+                              </div>
+      </div>
+            <div class="m-group">
+        <button class="m-top">Build with AI<svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="m-sub">
+                                    <a href="../rapid-ai-custom-development/index.html">Rapid AI Custom Development</a>
+                                                <a href="../404.html">AI Workflow Automation &amp; Agents</a>
+                                                <a class="child" href="../404.html">Intake, Documentation and Reporting Automation</a>
+                                                <span class="m-label">Development Resources</span>
+                                                <a class="child" href="../outsourcing-support/index.html">Outsourcing Support</a>
+                                                <span class="m-label">Joxel Products</span>
+                                                <a class="child" href="../harmoniq/index.html">Harmoniq</a>
+                                                <a class="child" href="../presencepro/index.html">PresencePro</a>
+                                                <a class="child" href="../data-convertkit/index.html">Data ConvertKit</a>
+                              </div>
+      </div>
+            <div class="m-group">
+        <button class="m-top">Recover Revenue<svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="m-sub">
+                                    <a href="../revenue-cycle-management/index.html">Revenue Cycle Management</a>
+                                                <a href="../404.html">AI Driven Denials &amp; AR Analytics</a>
+                                                <a href="../404.html">Authorization &amp; Billing Optimization</a>
+                                                <a href="../revenue-leakage-calculator/index.html">Revenue Leakage Calculator</a>
+                              </div>
+      </div>
+            <div class="m-group">
+        <button class="m-top">Optimize Your EHR<svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="m-sub">
+                                    <span class="m-label">Lifecycle</span>
+                                                <a class="child" href="../ehr-selection/index.html">EHR Selection</a>
+                                                <a class="child" href="../ehr-implementations/index.html">EHR Implementation</a>
+                                                <a class="child child2" href="../data-convertkit/index.html">Data ConvertKit</a>
+                                                <a class="child" href="../ehr-optimization/index.html">EHR Optimization</a>
+                                                <a class="child" href="../emr-configuration/index.html">EHR Support &amp; Configuration</a>
+                                                <a class="child" href="../404.html">EHR Staff Augmentation</a>
+                                                <span class="m-label">Platforms</span>
+                                                <a class="child" href="../avatar-consulting/index.html">MyAvatar Consulting</a>
+                                                <a class="child" href="../evolv-consulting/index.html">MyEvolv Consulting</a>
+                              </div>
+      </div>
+            <div class="m-group">
+        <button class="m-top">About<svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="m-sub">
+                                    <a href="../our-leaders/index.html">Our Leaders</a>
+                                                <a href="../joxel-365/index.html">Joxel 365</a>
+                                                <a href="../partnerships/index.html">Partnerships</a>
+                                                <a href="../locations/index.html">Locations</a>
+                                                <a href="../contact-us/index.html">Contact Us</a>
+                                                <a href="../client-results/index.html">Client Results</a>
+                                                <a href="../insights/index.html">Insights</a>
+                              </div>
+      </div>
+          </nav>
+    
+    <div class="drawer-foot">
+      <a class="btn block" href="../contact-us/index.html">Get in Touch <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      <div style="margin-top:1.1rem;display:flex;flex-direction:column;gap:.5rem;font-size:.9rem;color:var(--ink-2)">
+        <a href="tel:+14148004242" style="display:flex;gap:.5rem;align-items:center"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>(414) 800-4242</a>
+        <a href="mailto:info@thejoxelgroup.com" style="display:flex;gap:.5rem;align-items:center"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>info@thejoxelgroup.com</a>
+      </div>
+    </div>
+  </aside>
+</div>	<main id="content" class="page-fade">
+
+		<section class="page-banner single-banner">
+			<span class="blob sage" style="width:360px;height:360px;top:-140px;right:-60px"></span>
+			<div class="container">
+				<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span class="sep">/</span><a href="../insights/index.html">Insights</a><span class="sep">/</span><span class="current">CCBHC EHR Reporting Requirements: Configuring Your Netsmart Platform for Compliance, Clean Claims, and Quality Outcomes</span></nav>
+				<div class="post-meta" data-reveal style="margin-bottom:1rem">
+					<a class="tag" href="../category/ccbhc-compliance/index.html">CCBHC Compliance</a>					<span>September 10, 2026</span>
+					<span>By TopAdmin</span>				</div>
+				<h1 data-reveal data-delay="1">CCBHC EHR Reporting Requirements: Configuring Your Netsmart Platform for Compliance, Clean Claims, and Quality Outcomes</h1>
+			</div>
+		</section>
+
+		<section class="section" style="padding-top:clamp(2rem,4vw,3rem)">
+			<div class="container">
+				<article class="single-post post-647 post type-post status-publish format-standard has-post-thumbnail hentry category-ccbhc-compliance category-joxel-blog">
+
+											<figure class="single-thumb" data-reveal>
+							<img width="1200" height="675" src="../wp-content/uploads/2026/09/ChatGPT-Image-Sep-10-2026-04_05_33-AM-1200x675.png" class="attachment-joxel-featured size-joxel-featured wp-post-image" alt="Behavioral Health EHR Configuration for CCBHC Reporting" decoding="async" fetchpriority="high" srcset="../wp-content/uploads/2026/09/ChatGPT-Image-Sep-10-2026-04_05_33-AM-1200x675.png 1200w, ../wp-content/uploads/2026/09/ChatGPT-Image-Sep-10-2026-04_05_33-AM-300x169.png 300w, ../wp-content/uploads/2026/09/ChatGPT-Image-Sep-10-2026-04_05_33-AM-1024x576.png 1024w, ../wp-content/uploads/2026/09/ChatGPT-Image-Sep-10-2026-04_05_33-AM-768x432.png 768w, ../wp-content/uploads/2026/09/ChatGPT-Image-Sep-10-2026-04_05_33-AM-1536x864.png 1536w, ../wp-content/uploads/2026/09/ChatGPT-Image-Sep-10-2026-04_05_33-AM.png 1672w" sizes="(max-width: 1200px) 100vw, 1200px" />													</figure>
+					
+					<div class="rich single-body">
+						
+<p class="wp-block-paragraph">Certified Community Behavioral Health Clinics (CCBHCs) offer enhanced reimbursement and the ability to broaden services. However, getting your Netsmart system properly configured is a challenge. If your Netsmart EHR isn’t fully CCBHC-ready, you face mounting denials, documentation burden, and manual reporting.</p>
+
+
+
+<p class="wp-block-paragraph">The solution isn’t as simple as implementing a new EHR. Properly configuring Netsmart’s myAvatar and/or myEvolv EHRs requires a thorough understanding of clinical documentation and workflows, PPS requirements, and the needs of state agencies. This is where The Joxel Group can help. We have spent more than a decade configuring Netsmart platforms and bring 10-plus years of myAvatar expertise and seven-plus years of myEvolv configuration experience.</p>
+
+
+
+<p class="wp-block-paragraph">In this guide, we’ll explore:</p>
+
+
+
+<ul class="wp-block-list">
+<li>How to configure Netsmart to meet CCBHC needs</li>
+
+
+
+<li>Common configuration gaps that cause compliance and revenue problems</li>
+
+
+
+<li>The Joxel Group’s proven approach to CCBHC implementation</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading">The Core Problem: CCBHC Reporting Is Not &#8220;Just Another Report&#8221;</h2>
+
+
+
+<p class="wp-block-paragraph">CCBHC data reporting goes far beyond generating a PDF. The program requires your EHR to collect, organize, and export highly structured encounter and outcome data in ways that are:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Mappable to CCBHC service types, as every encounter must be coded to one of the nine distinct CCBHC service categories in formats states recognize for payment and oversight.</li>
+
+
+
+<li>Auditable at the patient and aggregate levels, as Medicaid and accreditation teams may pull records to validate service delivery, clinical outcomes, and care-coordination elements.</li>
+
+
+
+<li>Consistently reproducible year-over-year, because reliable trend analysis depends on standardized definitions and dependable capture.</li>
+
+
+
+<li>Ready for annual standardized data reporting, since certain data must be pulled and submitted to SAMHSA using a standardized data reporting template.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">When the EHR falls short, clinics may experience:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Billing errors and claim denials from improper encounter-level cost categorizations and service-type reporting</li>
+
+
+
+<li>Missed or delayed Quality Bonus Payment eligibility because outcome measures aren’t consistently captured or calculated</li>
+
+
+
+<li>Increased staff time spent reconciling free-text documentation into CCBHC-compatible spreadsheets</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading">What CCBHC EHR Configuration Actually Requires</h2>
+
+
+
+<p class="wp-block-paragraph">Meeting CCBHC expectations in Netsmart calls for precise, interconnected adjustments spanning clinical documentation, financial workflows, and regulatory reporting. These enhancements ensure accurate encounter-level cost categorizations, streamlined data submission, and adherence to evolving CCBHC quality and financial requirements.</p>
+
+
+
+<h3 class="wp-block-heading">1. Structured Clinical Data Capture for Quality Measures</h3>
+
+
+
+<p class="wp-block-paragraph">CCBHCs must collect and report on specific quality metrics. Rather than rely on clinicians to pull reports at regular intervals, we recommend embedding required measures into clinical documentation through smart forms that capture the data in the moment. These may include, but are not limited to:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Patient-centered mental health measures: PHQ-9, GAD-7, and C-SSRS</li>
+
+
+
+<li>Care coordination elements: Collaborative care activities and care-transition documentation</li>
+
+
+
+<li>CCBHC-defined service-type encounters: Ensuring each of the nine distinct CCBHC service types is defined, differentiated, and mapped to appropriate clinical workflows</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">These elements must be coded at the right levels so they can be rolled up into reports. For example, it’s not enough to document PHQ-9 and PHQ-9m scores within a note; your EHR needs to recognize this information so it can calculate outcomes and roll them up for reporting. Free-form documentation can make reporting nearly impossible, so your EHR needs a way to collect this information in a standardized fashion.</p>
+
+
+
+<h3 class="wp-block-heading">2. PPS-Aligned Billing and Revenue Cycle Configuration</h3>
+
+
+
+<p class="wp-block-paragraph">The move to a Prospective Payment System (PPS) changes how CCBHCs track and report encounters and costs. Configuration should reflect these requirements:</p>
+
+
+
+<ul class="wp-block-list">
+<li>PPS encounter definitions: Encounter-level cost categorizations, such as complex or intensive, mapped to service delivery workflows</li>
+
+
+
+<li>Reporting requirements: Ability to generate reports aligned with evolving PPS guidelines</li>
+
+
+
+<li>Outlier payments: Encounter-level cost categorization aligned to clinical workflows</li>
+
+
+
+<li>Provider taxonomy: Dual NPI setup to report on NPI at the practitioner and clinic levels</li>
+
+
+
+<li>Quality bonus payments: Automated calculations for quality-based reimbursement</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">3. SAMHSA Data Reporting Template Readiness</h3>
+
+
+
+<p class="wp-block-paragraph">CCBHCs are required to provide SAMHSA an annual data report using a standardized data reporting template. We recommend creating reports within Netsmart to streamline this process. This might include reports to track:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Encounters and visits by service category</li>
+
+
+
+<li>Clinical outcomes tied to the above-mentioned quality measures</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading">How The Joxel Group Approaches CCBHC EHR Configuration</h2>
+
+
+
+<p class="wp-block-paragraph">At The Joxel Group, our approach is rooted in a simple but powerful philosophy: get to know your system, find what’s holding it back, and help you unlock its potential. Our approach consists of four steps:</p>
+
+
+
+<ul class="wp-block-list">
+<li>CCBHC EHR Assessment: Understand your organization’s unique goals and challenges. Identify gaps and areas of opportunity, prioritizing improvements to optimize outcomes.</li>
+
+
+
+<li>CCBHC EHR Optimization: Make targeted improvements to clinical documentation, revenue cycle, reporting, and other aspects of the EHR as necessary to meet your organization’s goals and streamline operations.</li>
+
+
+
+<li>Testing &amp; Validation: Validate changes to confirm they’re performing as intended.</li>
+
+
+
+<li>Knowledge Transfer: Build your team’s confidence with comprehensive documentation and knowledge transfer, empowering them to navigate the system independently.</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading">Real Outcomes: What Proper CCBHC Configuration Delivers</h2>
+
+
+
+<p class="wp-block-paragraph">Clinics that partner with The Joxel Group for Netsmart’s myAvatar and/or myEvolv to align with CCBHC requirements see immediate and long-term gains across clinical, financial, and operational dimensions. Outcomes include:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Smarter documentation: Smart forms and conditional logic streamline documentation so clinicians can enter data once and use it throughout your system, from quality measures and care-coordination dashboards to PPS categorization and cost reporting.</li>
+
+
+
+<li>Fewer claim denials: Aligning service-type definitions with clinical documentation helps ensure proper coding and claim submission.</li>
+
+
+
+<li>Timely CCBHC data submissions: Data is collected in the moment rather than backfilled.</li>
+
+
+
+<li>Faster return on investment: Targeted Netsmart optimization projects are often completed in a matter of weeks, typically 8 to 16.</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading">Frequently Asked Questions</h2>
+
+
+
+<p class="wp-block-paragraph"><strong>Can my current Netsmart EHR handle CCBHC reporting, or do I need a new one?</strong></p>
+
+
+
+<p class="wp-block-paragraph">In most cases, Netsmart’s myAvatar and/or Netsmart’s myEvolv can be optimized to accommodate your organization’s CCBHC data collection, billing, and reporting needs. At The Joxel Group, we’ve spent years helping organizations configure Netsmart EHRs. We’ll conduct an assessment to identify gaps and make recommendations to help you decide next steps.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>How long will my EHR configuration project take?</strong></p>
+
+
+
+<p class="wp-block-paragraph">Timelines depend on the scope of configuration, but a typical CCBHC-focused project takes 8-16 weeks.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Will my team need extensive training afterward?</strong></p>
+
+
+
+<p class="wp-block-paragraph">We provide the knowledge transfer your organization requires to operate with confidence. We also provide comprehensive documentation to make sure everyone is aligned.</p>
+
+
+
+<p class="wp-block-paragraph">Ready to optimize Netsmart’s myAvatar or Netsmart’s myEvolv EHRs to meet CCBHC requirements? Schedule a discovery call with The Joxel Group to learn how we can help you meet CCBHC documentation, billing, and data-reporting requirements with Netsmart.</p>
+					</div>
+
+					<div class="single-back" data-reveal>
+						<a class="link-arrow" href="../insights/index.html">
+							<svg class="ico" viewBox="0 0 24 24" aria-hidden="true" style="transform:rotate(180deg)"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg> Back to Insights
+						</a>
+					</div>
+				</article>
+			</div>
+		</section>
+
+					<section class="section" style="background:var(--sec-tint)">
+				<div class="container wide">
+					<div class="section-head center" data-reveal><span class="eyebrow center">More from Insights</span><h2>Related Posts</h2></div>
+					<div class="post-grid">
+													<article class="post-card" data-reveal data-delay="0">
+																	<div class="post-thumb"><img width="300" height="167" src="../wp-content/uploads/2026/11/cc266-300x167.jpg" class="attachment-medium size-medium wp-post-image" alt="Healthcare data migration planning process overview" loading="lazy" decoding="async" srcset="../wp-content/uploads/2026/11/cc266-300x167.jpg 300w, ../wp-content/uploads/2026/11/cc266-1024x572.jpg 1024w, ../wp-content/uploads/2026/11/cc266-768x429.jpg 768w, ../wp-content/uploads/2026/11/cc266.jpg 1376w" sizes="auto, (max-width: 300px) 100vw, 300px" /></div>
+																<div class="post-body">
+									<div class="post-meta"><span class="tag">Joxel Blog</span><span>November 13, 2026</span></div>
+									<h3><a href="../healthcare-data-migration-planning/index.html">Healthcare Data Migration Planning: Best Practices for Transitioning Legacy Records Safely</a></h3>
+									<p>6 min read Healthcare data migration planning is essential for organizations aiming to transition legacy records into a new system without compromising…</p>
+									<a class="link-arrow" href="../healthcare-data-migration-planning/index.html">Read More <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+								</div>
+							</article>
+													<article class="post-card" data-reveal data-delay="1">
+																	<div class="post-thumb"><img width="300" height="167" src="../wp-content/uploads/2026/11/setting-up-an-ai-governance-committee-before-your-organizati-cc178-300x167.jpg" class="attachment-medium size-medium wp-post-image" alt="" loading="lazy" decoding="async" srcset="../wp-content/uploads/2026/11/setting-up-an-ai-governance-committee-before-your-organizati-cc178-300x167.jpg 300w, ../wp-content/uploads/2026/11/setting-up-an-ai-governance-committee-before-your-organizati-cc178-1024x572.jpg 1024w, ../wp-content/uploads/2026/11/setting-up-an-ai-governance-committee-before-your-organizati-cc178-768x429.jpg 768w, ../wp-content/uploads/2026/11/setting-up-an-ai-governance-committee-before-your-organizati-cc178-1536x857.jpg 1536w, ../wp-content/uploads/2026/11/setting-up-an-ai-governance-committee-before-your-organizati-cc178.jpg 2048w" sizes="auto, (max-width: 300px) 100vw, 300px" /></div>
+																<div class="post-body">
+									<div class="post-meta"><span class="tag">Joxel Blog</span><span>November 13, 2026</span></div>
+									<h3><a href="../setting-up-an-ai-governance-committee-before-your-organization-adopts-clinical-ai/index.html">Setting Up an AI Governance Committee Before Your Organization Adopts Clinical AI</a></h3>
+									<p>4 min read An AI governance committee is a cross-functional group that decides which clinical AI tools a healthcare organization adopts, how…</p>
+									<a class="link-arrow" href="../setting-up-an-ai-governance-committee-before-your-organization-adopts-clinical-ai/index.html">Read More <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+								</div>
+							</article>
+													<article class="post-card" data-reveal data-delay="2">
+																	<div class="post-thumb"><img width="300" height="167" src="../wp-content/uploads/2026/11/clinical-informatics-team-roles-building-an-effective-team-f-cc278-300x167.jpg" class="attachment-medium size-medium wp-post-image" alt="" loading="lazy" decoding="async" srcset="../wp-content/uploads/2026/11/clinical-informatics-team-roles-building-an-effective-team-f-cc278-300x167.jpg 300w, ../wp-content/uploads/2026/11/clinical-informatics-team-roles-building-an-effective-team-f-cc278-1024x572.jpg 1024w, ../wp-content/uploads/2026/11/clinical-informatics-team-roles-building-an-effective-team-f-cc278-768x429.jpg 768w, ../wp-content/uploads/2026/11/clinical-informatics-team-roles-building-an-effective-team-f-cc278.jpg 1376w" sizes="auto, (max-width: 300px) 100vw, 300px" /></div>
+																<div class="post-body">
+									<div class="post-meta"><span class="tag">Joxel Blog</span><span>November 6, 2026</span></div>
+									<h3><a href="../clinical-informatics-team-roles-building-an-effective-team-for/index.html">Clinical Informatics Team Roles: Building an Effective Team for Every Health System</a></h3>
+									<p>Building a clinical informatics team is essential for every health system aiming to enhance patient care, streamline operations, and leverage data</p>
+									<a class="link-arrow" href="../clinical-informatics-team-roles-building-an-effective-team-for/index.html">Read More <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+								</div>
+							</article>
+											</div>
+				</div>
+			</section>
+		
+		<!-- CTA band (consistent with the rest of the site) -->
+		<section class="section cta-band">
+			<div class="container">
+				<div class="cta-inner" data-reveal>
+					<span class="eyebrow center">GUIDING CHANGE. DELIVERING VALUE.</span>
+					<h2>Let's build something exceptional together.</h2>
+					<p>Joxel offers experienced, expert assistance throughout every phase of your journey. Reach out to start the conversation.</p>
+					<div class="cta-actions">
+						<a class="btn light" href="../contact-us/index.html">Get in Touch <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		
+	</main>
+
+	<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"BlogPosting","headline":"CCBHC EHR Reporting Requirements: Configuring Your Netsmart Platform for Compliance, Clean Claims, and Quality Outcomes","datePublished":"2026-09-10T08:00:00+00:00","dateModified":"2026-09-09T20:06:59+00:00","author":{"@type":"Person","name":"TopAdmin"},"publisher":{"@type":"Organization","name":"The Joxel Group, LLC"},"mainEntityOfPage":"index.html","articleSection":"CCBHC Compliance","image":"..\/wp-content\/uploads\/2026\/09\/ChatGPT-Image-Sep-10-2026-04_05_33-AM-1200x675.png"}</script>
+<footer class="site-footer">
+  <div class="container wide">
+    <div class="footer-main">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <img src="../wp-content/uploads/2026/07/Asset-1@4x.png" alt="The Joxel Group, LLC">
+        <p>A business consulting and development firm with expertise in the health care and pension industries, dedicated to innovate, improve and deliver high quality results.</p>
+        <div class="footer-social">
+                      <a href="https://www.linkedin.com/in/thejoxelgroupllc/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-13h4v2a4 4 0 0 1 2-2z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                      <a href="https://www.facebook.com/TheJoxelGroup/" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                      <a href="https://twitter.com/TheJoxelGroup" target="_blank" rel="noopener" aria-label="Twitter"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M23 4.5a8.4 8.4 0 0 1-2.4.7A4.2 4.2 0 0 0 22.4 3a8.3 8.3 0 0 1-2.6 1 4.1 4.1 0 0 0-7 3.8A11.7 11.7 0 0 1 3 3.7a4.1 4.1 0 0 0 1.3 5.5A4 4 0 0 1 2.4 8.7a4.1 4.1 0 0 0 3.3 4 4.1 4.1 0 0 1-1.9.1 4.1 4.1 0 0 0 3.8 2.9A8.3 8.3 0 0 1 1 17.5a11.7 11.7 0 0 0 18-9.9c.8-.6 1.5-1.3 2-2.1z"/></svg></a>
+                  </div>
+      </div>
+
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+                      <li><a href="../ai-strategy-governance/index.html">Start with AI or Plan Your AI</a></li>
+                      <li><a href="../rapid-ai-custom-development/index.html">Build with AI</a></li>
+                      <li><a href="../revenue-cycle-management/index.html">Recover Revenue</a></li>
+                      <li><a href="../ehr-selection/index.html">Optimize Your EHR</a></li>
+                  </ul>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+                      <li><a href="../about-us/index.html">About</a></li>
+                      <li><a href="../our-leaders/index.html">Our Leaders</a></li>
+                      <li><a href="../joxel-365/index.html">Joxel 365</a></li>
+                      <li><a href="../partnerships/index.html">Partnerships</a></li>
+                      <li><a href="../locations/index.html">Locations</a></li>
+                      <li><a href="../contact-us/index.html">Contact Us</a></li>
+                      <li><a href="../client-results/index.html">Client Results</a></li>
+                      <li><a href="../insights/index.html">Insights</a></li>
+                  </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h5>Get in Touch</h5>
+        <ul class="footer-contact">
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><span>6737 W. Washington St., Suite 3470<br />
+West Allis, WI 53214</span></li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+14148004242">(414) 800-4242</a></li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><a href="mailto:info@thejoxelgroup.com">info@thejoxelgroup.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <div>© The Joxel Group, LLC. All rights reserved.</div>
+      <div class="footer-legal">
+                  <a href="../terms-of-use/index.html">Terms of Use</a>
+                  <a href="../privacy-policy/index.html">Privacy Policy</a>
+              </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top (smooth scroll, handled by assets/js/main.js) -->
+<a class="to-top" aria-label="Back to top"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5"/><path d="m6 11 6-6 6 6"/></svg></a>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","http://thejoxelgroup.local/wp-content/uploads/*","http://thejoxelgroup.local/wp-content/*","http://thejoxelgroup.local/wp-content/plugins/*","http://thejoxelgroup.local/wp-content/themes/joxelweb/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script id="main-js-js-extra">
+var JOXEL_CONTACT = {"ajax":"/wp-admin/admin-ajax.php","nonce":"3f716fef49"};
+//# sourceURL=main-js-js-extra
+</script>
+<script id="main-js-js" defer src="../wp-content/themes/joxelweb/assets/js/main.js"></script>
+</body>
+</html>
+
+
+<!-- Page supported by LiteSpeed Cache 7.9.3 on 2026-11-19 06:43:17 -->

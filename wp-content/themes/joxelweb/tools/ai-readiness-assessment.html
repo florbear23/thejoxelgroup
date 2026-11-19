@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Readiness Assessment - The Joxel Group</title>
+<style>
+:root{--bg:#EFF4F3;--ink:#33434C;--muted:#5B6A72;--blue:#0E7C74;--cyan:#1AA3CE;--amber:#d97706;--red:#b42318;--green:#067647;--line:#DCE7E4;--card:#FBFDFC;--shadow:0 20px 50px rgba(60,70,80,.14);--radius:24px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)}.hero{background:radial-gradient(circle at top left,#D5E7E3,transparent 35%),linear-gradient(135deg,#0C3E3A,#0A5A54 58%,#1AA3CE);color:white;padding:28px 5vw 64px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}.brand{display:flex;gap:14px;align-items:center}.brand-logo{display:block;width:182px;max-width:34vw;height:auto;background:white;border-radius:12px;padding:7px;border:1px solid rgba(255,255,255,.35)}.brand small{display:block;color:#D5E7E3}.hero-content{display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:45px;align-items:center;margin-top:65px}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:800;color:#147F9E;margin:0 0 12px}.hero .eyebrow{color:#7CC8DE}h1{font-size:clamp(2.4rem,5vw,5.2rem);line-height:.95;margin:0 0 22px}.lede{font-size:1.13rem;line-height:1.7;color:#D5E7E3;max-width:820px}.actions{display:flex;gap:12px;margin-top:25px;flex-wrap:wrap}button,.primary,.ghost{border:0;border-radius:999px;padding:13px 18px;font-weight:800;text-decoration:none;cursor:pointer}.primary{background:white;color:#0A5A54}.ghost,.secondary{background:rgba(255,255,255,.12);color:white;border:1px solid rgba(255,255,255,.28)}.client-card{background:rgba(255,255,255,.13);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.24);padding:23px;border-radius:var(--radius);box-shadow:var(--shadow)}label{display:block;font-size:.82rem;font-weight:800;color:#D5E7E3;margin-bottom:13px}input,textarea,select{width:100%;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font:inherit;background:white;color:var(--ink);margin-top:6px}textarea{resize:vertical}main{padding:0 5vw 50px}.section{max-width:1280px;margin:-34px auto 60px}.section+.section{margin-top:0}.grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:17px}.metric,.panel,.question{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.metric{padding:23px}.metric span{display:block;color:var(--muted);font-weight:800;font-size:.82rem;text-transform:uppercase;letter-spacing:.1em}.metric strong{display:block;font-size:1.9rem;margin-top:9px}.hero-metric strong{font-size:3.7rem;color:var(--blue)}.metric em{display:block;color:var(--muted);font-style:normal;margin-top:5px;line-height:1.45}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}.panel{padding:28px}.section-head{margin-bottom:21px}.section-head h2{font-size:2rem;margin:0 0 6px}.section-head p:not(.eyebrow){color:var(--muted);margin:0;line-height:1.5}.score-guide{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.score-card{background:#F0F6F5;border:1px solid #DCE7E4;border-radius:18px;padding:16px}.score-card strong{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#0A5A54;color:white;margin-bottom:10px}.score-card h3{font-size:1rem;margin:0 0 8px}.score-card p{font-size:.9rem;line-height:1.45;color:var(--muted);margin:0}.tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}.tab{padding:12px 15px;border:1px solid var(--line);background:white;border-radius:999px;font-weight:800;cursor:pointer;color:#33434C}.tab.active{background:#0A5A54;color:white;border-color:#0A5A54}.questions{display:grid;gap:16px}.question{padding:22px}.q-top{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}.q-top h3{margin:0 0 8px}.q-top p{margin:0;color:var(--muted);line-height:1.55}.score-row{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0}.score-row button{min-width:150px;flex:1;border-radius:18px;border:1px solid var(--line);background:#F0F6F5;color:#33434C;font-weight:800;padding:12px;text-align:left}.score-row button b{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#E4EEEC;color:#0A5A54;margin-right:8px}.score-row button small{display:block;color:#5B6A72;margin:6px 0 0 40px;font-weight:600;line-height:1.35}.score-row button.active{background:#E4EEEC;color:#0A5A54;border-color:#0E7C74;box-shadow:0 0 0 3px rgba(14,124,116,.12)}.score-row button.active b{background:#0E7C74;color:white}.evidence{display:grid;grid-template-columns:1fr;gap:14px}.hint{background:#F0F6F5;border:1px dashed #9FB0AE;border-radius:16px;padding:14px;color:#5B6A72;font-size:.94rem;line-height:1.55}.gap-list{display:grid;gap:12px}.gap{border:1px solid var(--line);border-left:6px solid var(--amber);padding:14px;border-radius:16px;background:#fff}.gap.fail{border-left-color:var(--red)}.gap.pass{border-left-color:var(--green)}.gap p{margin:.35rem 0 0;color:var(--muted);line-height:1.45}.domain-bars{display:grid;gap:10px;margin-top:18px}.domain-bar{display:grid;grid-template-columns:190px 1fr 50px;gap:10px;align-items:center;font-size:.9rem;color:#5B6A72}.bar-track{height:10px;background:#E4EEEC;border-radius:999px;overflow:hidden}.bar-fill{height:100%;background:linear-gradient(90deg,#0E7C74,#1AA3CE);border-radius:999px}.chip{display:inline-block;border-radius:999px;padding:5px 9px;background:#D5E7E3;color:#0A5A54;font-weight:900;font-size:.76rem;margin:8px 0}.chip.red{background:#fee4e2;color:#912018}.chip.green{background:#dcfae6;color:#067647}.callout{background:#F0F6F5;border:1px solid #DCE7E4;border-radius:18px;padding:16px;margin:12px 0;color:#33434C;line-height:1.55}.report h3{margin-top:25px}.report-table{width:100%;border-collapse:collapse}.report-table th,.report-table td{border-bottom:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}footer{text-align:center;color:var(--muted);padding:30px}@media(max-width:1100px){.score-guide,.hero-content,.two-col,.grid{grid-template-columns:1fr}.section{margin-top:28px}.brand-logo{max-width:220px}.evidence{grid-template-columns:1fr}}@media(max-width:680px){.score-row button{width:100%;flex-basis:100%}.domain-bar{grid-template-columns:1fr}.brand{align-items:flex-start}.brand-logo{width:150px}}@media print{.hero .actions,.topbar button,.tabs,#assessment,footer,.scoring-panel{display:none!important}.hero{padding:24px;color:#111;background:white}label{color:#111}.client-card,.metric,.panel{box-shadow:none;border:1px solid #ddd}.section{margin:22px auto}.report{page-break-before:always}.brand-logo{border:1px solid #ddd;background:white}}
+</style>
+<style>
+/* Responsive hardening for narrow screens / iframe embedding (added on integration). */
+html, body { overflow-x: hidden; }
+/* Results stay hidden until the completion gate opens (see isAssessmentComplete). */
+[hidden] { display: none !important; }
+#radar { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto; }
+img, svg, video { max-width: 100%; height: auto; }
+.report-table { display: block; width: 100%; overflow-x: auto; }
+@media (max-width: 680px) {
+  .metric strong { font-size: 1.6rem; }
+  .hero-metric strong { font-size: 3rem; }
+}
+</style>
+<style>
+/* Full-bleed hero background, with hero content + body sections constrained to
+   the site's container width (--container-wide 1340px + gutter) and centered. */
+.hero { padding-left: 0; padding-right: 0; }
+.hero > .topbar,
+.hero > .hero-content {
+  max-width: 1340px;
+  margin-left: auto; margin-right: auto;
+  padding-left: clamp(1.15rem, 4vw, 2.75rem);
+  padding-right: clamp(1.15rem, 4vw, 2.75rem);
+}
+main { padding-left: 0; padding-right: 0; }
+.section {
+  max-width: 1340px;
+  padding-left: clamp(1.15rem, 4vw, 2.75rem);
+  padding-right: clamp(1.15rem, 4vw, 2.75rem);
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <nav class="topbar"><div class="brand"><img class="brand-logo" src="../../../uploads/2026/07/Asset-1@4x.png" alt="The Joxel Group, LLC logo"><div><strong>AI Readiness Assessment</strong><small>Behavioral Health Diagnostic</small></div></div><div><button id="resetBtn" class="secondary">Reset</button> <button id="printBtn" class="secondary">Export / Print Report</button></div></nav>
+  <section class="hero-content"><div><h1>Assess AI maturity, governance readiness, and implementation risk.</h1><p class="lede">The Joxel Group single-file master consultant assessment with embedded scoring, evidence strength, dashboard analytics, critical gate identification, priority risk identification, method view, and executive report generation.</p><div class="actions"><a href="#assessment" id="startAssessment" class="primary">Start Assessment</a><a href="#dashboard" class="ghost">View Dashboard</a><a href="#method" class="ghost">View Method</a></div></div><aside class="client-card"><label>Prepared For *<input id="orgName" placeholder="Client organization" required aria-required="true"></label><label>Client Contact / Audience *<input id="preparedFor" placeholder="Executive team / board / committee" required aria-required="true"></label><label>Prepared By<input id="preparedBy"></label><label>Assessment Date<input id="assessmentDate" type="date"></label><label>Optional AI Use Case / Focus Area<textarea id="useCaseDesc" rows="3" placeholder="Optional: describe the AI use case, workflow, operational area, or strategic focus being assessed."></textarea></label></aside></section>
+</header>
+<main>
+<section id="dashboard" class="section grid" hidden><article class="metric hero-metric"><span>Overall Score</span><strong id="overallScore">0.0</strong><em>/ 5.0</em></article><article class="metric"><span>Readiness Decision</span><strong id="tier">Not Started</strong><em id="tierNote">Complete scoring to generate decision guidance.</em></article><article class="metric"><span>Critical Gates</span><strong id="decision">Not Evaluated</strong><em id="gateNote">Critical controls cannot be offset by higher averages.</em></article><article class="metric"><span>Completion</span><strong id="completion">0%</strong><em id="answeredCount">0 scored</em></article></section>
+<section id="method" class="section panel"><div class="section-head"><p class="eyebrow">Method</p><h2>Assessment Method</h2><p>This assessment combines calibrated scoring, evidence strength, critical gate review, domain scoring, and evidence notes to support a more consistent AI readiness discussion.</p></div><div id="methodBody"></div></section>
+<section class="section panel scoring-panel"><div class="section-head"><p class="eyebrow">Scoring standard</p><h2>Calibrated Scoring Guide</h2><p>Use this guide consistently across every domain and criterion.</p></div><div id="scoringGuide" class="score-guide"></div></section>
+<section id="profile" class="section two-col" hidden><article class="panel"><div class="section-head"><p class="eyebrow">Domain maturity</p><h2>Readiness Profile</h2></div><canvas id="radar" width="560" height="430"></canvas><div id="domainBars" class="domain-bars"></div></article><article class="panel"><div class="section-head"><p class="eyebrow">Priority risks</p><h2>Gates and Lowest Scored Areas</h2></div><div id="gaps" class="gap-list"></div></article></section>
+<section id="assessment" class="section"><div class="section-head"><p class="eyebrow">Assessment</p><h2>Score each criterion</h2><p>Select a 1–5 score, choose Evidence Strength, and add notes or evidence. Critical gates are highlighted. Your results appear once all 37 questions are answered.</p><p class="hint" id="progressNote" role="status" aria-live="polite" style="margin-top:14px"></p></div><div id="domainTabs" class="tabs"></div><div id="questions" class="questions"><p class="hint">Loading assessment...</p></div></section>
+<section class="section report panel" id="report" hidden><div class="section-head"><p class="eyebrow">Executive report</p><h2>Generated Summary</h2></div><div id="reportBody"></div></section>
+</main><footer>AI Readiness Assessment Master Consultant File • The Joxel Group • Browser-local storage only</footer>
+<script>
+/*
+================================================================================
+MASTER CONSULTANT FILE - EDIT HERE
+================================================================================
+This is the maintainable source-of-truth file.
+- To change questions, edit APP.questions below.
+- To mark or unmark a critical gate, change critical: true/false on the question.
+- To change the scoring guide, edit APP.config.scoringGuide.
+- To change the critical gate minimum, edit APP.config.criticalGateMin.
+- To change the method section, edit APP.config.methodText.
+- Evidence Strength is captured for each question in the assessment UI and report.
+================================================================================
+*/
+const APP = {
+  "config": {
+    "preparedByDefault": "Sushil Pillai, The Joxel Group",
+    "logoUrl": "../../../uploads/2026/07/Asset-1@4x.png",
+    "criticalGateMin": 3,
+    "scoringGuide": [
+      {
+        "score": 1,
+        "label": "No Evidence of Capability",
+        "description": "No documented capability, owner, repeatable process, or evidence exists."
+      },
+      {
+        "score": 2,
+        "label": "Recognized but Formal",
+        "description": "The capability is recognized and formally acknowledged, but implementation may still be inconsistent, incomplete, or dependent on individuals."
+      },
+      {
+        "score": 3,
+        "label": "Partially Established",
+        "description": "A basic capability exists, but coverage, accountability, documentation, or consistency is incomplete."
+      },
+      {
+        "score": 4,
+        "label": "Operational and Evidenced",
+        "description": "The capability is documented, owned, implemented, and supported by evidence across key areas."
+      },
+      {
+        "score": 5,
+        "label": "Measured and Adaptive",
+        "description": "The capability is measured, reviewed, continuously improved, and effective over time."
+      }
+    ],
+    "methodText": [
+      {
+        "heading": "Calibrated scoring",
+        "body": "Each criterion is scored on a 1\u20135 maturity scale ranging from no evidence of capability to measured and adaptive capability."
+      },
+      {
+        "heading": "Evidence strength",
+        "body": "For each criterion, Evidence Strength captures how well the selected score is supported by documentation, examples, artifacts, operational data, or other verifiable evidence."
+      },
+      {
+        "heading": "Critical gates",
+        "body": "Selected governance, privacy, security, regulatory, monitoring, and human-oversight controls are highlighted because they should receive explicit attention before AI implementation."
+      },
+      {
+        "heading": "Readiness decision",
+        "body": "The readiness decision combines the overall score with critical gate status. Critical gate issues cannot be offset by stronger scores in other areas."
+      },
+      {
+        "heading": "Evidence notes",
+        "body": "Evidence notes support score interpretation and help distinguish stated maturity from demonstrated maturity."
+      }
+    ]
+  },
+  "questions": [
+    {
+      "domain": "Business Strategy & Governance",
+      "criterion": "Stakeholder Identification",
+      "description": "Have stakeholders been identified? If so, who are the key stakeholders for AI implementation, investment, and risk?",
+      "critical": false
+    },
+    {
+      "domain": "Business Strategy & Governance",
+      "criterion": "Stakeholder Communication",
+      "description": "Is there a stakeholder communication plan? If so, how will communication with stakeholders take place through the AI Project?",
+      "critical": false
+    },
+    {
+      "domain": "Business Strategy & Governance",
+      "criterion": "Stakeholder Involvement",
+      "description": "Is there a stakeholder involvement plan? How will stakeholders be involved in decision making and implementation?",
+      "critical": false
+    },
+    {
+      "domain": "Business Strategy & Governance",
+      "criterion": "AI Strategic Alignment - Vision and Goals",
+      "description": "Have you developed an AI vision and measurable goals for the organization?",
+      "critical": false
+    },
+    {
+      "domain": "Business Strategy & Governance",
+      "criterion": "AI Strategic Alignment - Outcomes",
+      "description": "Have you defined acceptable outcomes you would like to measure in an AI pilot or implementation?",
+      "critical": false
+    },
+    {
+      "domain": "Business Strategy & Governance",
+      "criterion": "AI Governance - Policies",
+      "description": "Is there a AI Governance Policy? What guidelines do you currently have for data usage, approval gates, and AI deployment?",
+      "critical": true
+    },
+    {
+      "domain": "Business Strategy & Governance",
+      "criterion": "AI Governance - Oversight",
+      "description": "Do you have a data protection officer or team?",
+      "critical": true
+    },
+    {
+      "domain": "Business Strategy & Governance",
+      "criterion": "AI Governance - Risk",
+      "description": "Is there a Risk Assessment Plan? How do you handle risks in your business processes?",
+      "critical": true
+    },
+    {
+      "domain": "Business Strategy & Governance",
+      "criterion": "AI Governance - Risk Identification",
+      "description": "Is there a Risk Assessment Plan? Do you understand potential risks of implementing AI, such as bias or data breaches?",
+      "critical": true
+    },
+    {
+      "domain": "Business Strategy & Governance",
+      "criterion": "AI Governance - Risk Mitigation",
+      "description": "Do you have risk mitigation plans and strategies?",
+      "critical": true
+    },
+    {
+      "domain": "Business Strategy & Governance",
+      "criterion": "AI Governance - Concerns",
+      "description": "Have you identified concerns as you embark on AI operations? What concerns do you have about using AI in your operations?",
+      "critical": false
+    },
+    {
+      "domain": "Business Strategy & Governance",
+      "criterion": "Regulatory Compliance - 42 CFR Part 2",
+      "description": "Do you have policies and controls to monitor compliance with 42 CFR Part 2, including consent and SUD-data protections?",
+      "critical": true
+    },
+    {
+      "domain": "Business Strategy & Governance",
+      "criterion": "Regulatory Compliance - HIPAA",
+      "description": "Do you have policies and controls to monitor compliance with HIPAA, including PHI access, use, disclosure, and audit requirements?",
+      "critical": true
+    },
+    {
+      "domain": "Business Strategy & Governance",
+      "criterion": "Ethical Use of AI",
+      "description": "Do you have a policy for ethical use of AI within your organization? What steps are you taking to ensure ethical use of AI?",
+      "critical": true
+    },
+    {
+      "domain": "Business Strategy & Governance",
+      "criterion": "Human in the Loop",
+      "description": "Do you have a plan to leverage Human in the Loop operationally within the organization?",
+      "critical": true
+    },
+    {
+      "domain": "Data Management",
+      "criterion": "Data Governance",
+      "description": "Do you have a Data Steward? Is data ownership, definition, lineage and change control defined in your organization?",
+      "critical": false
+    },
+    {
+      "domain": "Data Management",
+      "criterion": "Data Availability",
+      "description": "Will your clinical, operational, and financial data be accessible for AI use?",
+      "critical": false
+    },
+    {
+      "domain": "Data Management",
+      "criterion": "AI-Ready Data",
+      "description": "Is structured and unstructured data, including notes, assessments, and referrals, available and approved for AI use?",
+      "critical": false
+    },
+    {
+      "domain": "Data Management",
+      "criterion": "Data Quality",
+      "description": "Is the data accurate, complete, timely, and reliable?",
+      "critical": false
+    },
+    {
+      "domain": "Data Management",
+      "criterion": "Data Sources",
+      "description": "What data sources are currently collected, and is semantic integrity maintained across systems?",
+      "critical": false
+    },
+    {
+      "domain": "Data Management",
+      "criterion": "Privacy Controls",
+      "description": "Are PHI and substance-use-disorder data protected through consent-aware access, segmentation, and audit logging?",
+      "critical": true
+    },
+    {
+      "domain": "Technology Infrastructure",
+      "criterion": "Hardware",
+      "description": "Do you have scalable cloud/hybrid compute and storage for AI workloads?",
+      "critical": false
+    },
+    {
+      "domain": "Technology Infrastructure",
+      "criterion": "Software",
+      "description": "What software tools are currently in use? Are they compatible with AI applications?",
+      "critical": false
+    },
+    {
+      "domain": "Technology Infrastructure",
+      "criterion": "AI Software or Tools",
+      "description": "Do you currently have any software or tools that leverage AI development within the organization?",
+      "critical": false
+    },
+    {
+      "domain": "Technology Infrastructure",
+      "criterion": "Integration Tools",
+      "description": "Do you have tools or services that allow you to integrate with existing systems?",
+      "critical": false
+    },
+    {
+      "domain": "Technology Infrastructure",
+      "criterion": "Monitoring Tools",
+      "description": "Do you have capabilities for versioning, monitoring, drift detection, retraining, and rollback?",
+      "critical": true
+    },
+    {
+      "domain": "Technology Infrastructure",
+      "criterion": "Security",
+      "description": "Do you currently have IAM, secrets management, audit logging, vendor controls, and secure prompt/data boundaries?",
+      "critical": true
+    },
+    {
+      "domain": "Application Alignment",
+      "criterion": "Delivery Model",
+      "description": "Do you currently have a centralized, federated or hybrid operating model defined with clear decision rights? Would you use the same model for AI development?",
+      "critical": false
+    },
+    {
+      "domain": "Application Alignment",
+      "criterion": "Use Case Lifecycle",
+      "description": "In your development process, do you have a standardized intake, triage, build, validate, deploy, monitor, scale process? If not, what is your process?",
+      "critical": false
+    },
+    {
+      "domain": "Application Alignment",
+      "criterion": "Cross-Functional Teams",
+      "description": "Is your cross-functional team (IT, Clinical, Privacy, Security, Compliance, Operations) involved in either software development/deployment? What is your current process?",
+      "critical": false
+    },
+    {
+      "domain": "Application Alignment",
+      "criterion": "Funding Model",
+      "description": "Do you have a funding process? How is your projects/initiatives funded and measured?",
+      "critical": false
+    },
+    {
+      "domain": "Application Alignment",
+      "criterion": "Adoption Management",
+      "description": "Is there a software (custom or packaged) adoption plan? How are training, workflow redesign, and change management for clinicians/staff communicated and planned?",
+      "critical": false
+    },
+    {
+      "domain": "Organization Architecture",
+      "criterion": "Leadership AI Literacy",
+      "description": "Do your executives/stakeholders understand AI capabilities/limits in general and in a behavioral health context? How would you rate it?",
+      "critical": false
+    },
+    {
+      "domain": "Organization Architecture",
+      "criterion": "Clinical Engagement",
+      "description": "Will clinicians and quality leaders be involved in design, validation, and adoption of AI within the organization?",
+      "critical": false
+    },
+    {
+      "domain": "Organization Architecture",
+      "criterion": "Technical Skills",
+      "description": "What is the current skill level in AI, machine learning, GenAI, data engineering, analytics, and security within the organization? How would you rate it?",
+      "critical": false
+    },
+    {
+      "domain": "Organization Architecture",
+      "criterion": "Upskilling Programs",
+      "description": "Are there plans for ongoing training paths for clinical/admin teams and technical roles? How well is it defined?",
+      "critical": false
+    },
+    {
+      "domain": "Organization Architecture",
+      "criterion": "Culture",
+      "description": "Does your culture support measurement, learning, and safe experimentation in a controlled environment without harming care? How do you rate your capability in this?",
+      "critical": false
+    }
+  ]
+};
+
+/* APPLICATION ENGINE - no routine consultant edits needed below this line */
+const $ = id => document.getElementById(id);
+const esc = s => String(s || '').replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+let state = JSON.parse(localStorage.getItem('joxelAIReadyStateMasterConsultantEvidenceV8') || '{}');
+let meta = JSON.parse(localStorage.getItem('joxelAIReadyMetaMasterConsultantEvidenceV8') || '{}');
+let activeDomain = '';
+function save(){localStorage.setItem('joxelAIReadyStateMasterConsultantEvidenceV8', JSON.stringify(state)); localStorage.setItem('joxelAIReadyMetaMasterConsultantEvidenceV8', JSON.stringify(meta));}
+function domains(){return [...new Set(APP.questions.map(q => q.domain))];}
+function key(q){return q.domain + '::' + q.criterion;}
+function rows(){return APP.questions.map(q => ({...q, key:key(q), score:Number((state[key(q)]||{}).score || 0), notes:(state[key(q)]||{}).notes || '', evidenceStrength:(state[key(q)]||{}).evidenceStrength || ''}));}
+function guide(v){return APP.config.scoringGuide.find(g => g.score === v) || {score:v,label:'Score '+v,description:''};}
+/* Completion gate: the single source of truth. True only when every question has a valid 1-5 score.
+   Nothing that calculates or renders a result may run unless this is true. */
+function isAssessmentComplete(){return APP.questions.length>0 && APP.questions.every(q => {const s=Number((state[key(q)]||{}).score); return Number.isInteger(s) && s>=1 && s<=5;});}
+/* Client information gate: Prepared For and Client Contact / Audience must both be non-blank (trimmed). */
+/* ---- Contact-information validation: rejects blank AND obviously junk values. The server re-checks name, email and organization. ---- */
+const JUNK_WORDS=new Set(['test','testing','tester','asdf','asdfg','asdfgh','asdfghjkl','qwer','qwert','qwerty','qwertyuiop','abc','abcd','abcde','xxx','none','null','undefined','fake','dummy','sample','blah','blahblah','lorem','ipsum','unknown','noname','tbd','tba','idk','nothing','name','email','organization','company']);
+const KEY_ROWS=['qwertyuiop','asdfghjkl','zxcvbnm','abcdefghijklmnopqrstuvwxyz','1234567890'];
+const JUNK_DOMAIN=/(^|\.)((example|test|domain|email|fake|dummy|sample|asdf|qwerty|noemail|nomail|none)\.(com|org|net))$|\.(test|invalid|example|localhost)$/;
+/* True for values with fewer than 2 characters, one repeated character ("xxx"), digits only, "n/a", whole-value placeholders ("test", "asdf") or keyboard runs ("qwer"). Whole-value match only, so "Test Kitchen" or "Dean" are fine. */
+function looksJunk(s){const raw=String(s||'').trim(), t=raw.toLowerCase().replace(/[^\p{L}\p{N}]+/gu,''); if(t.length<2) return true; if(/^(.)\1+$/u.test(t)) return true; if(/^\d+$/.test(t)) return true; if(/^n[\/.]a\.?$/i.test(raw)) return true; if(JUNK_WORDS.has(t)) return true; if(t.length>=4 && KEY_ROWS.some(k=>k.includes(t)||k.split('').reverse().join('').includes(t))) return true; return false;}
+function vOrg(v){const s=String(v||'').trim(); if(!s) return 'Enter the client organization name.'; if(s.length>120||!/\p{L}/u.test(s)||looksJunk(s)) return 'Enter a real organization name.'; return '';}
+function vAudience(v){const s=String(v||'').trim(); if(!s) return 'Enter the client contact or audience.'; if(s.length>120||!/\p{L}/u.test(s)||looksJunk(s)) return 'Enter a real contact name or audience (for example "Executive team").'; return '';}
+function vPersonName(v){const s=String(v||'').trim(); if(!s) return 'Enter your name.'; const letters=(s.match(/\p{L}/gu)||[]).length; if(s.length>80||letters<2||!/^\p{L}[\p{L}\p{M}.'’ -]*$/u.test(s)||looksJunk(s)) return 'Enter your real name (letters only, at least two).'; return '';}
+function vEmail(v){const s=String(v||'').trim(); if(!s) return 'Enter your email address.'; const m=/^([A-Za-z0-9._%+'-]+)@((?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z]{2,})$/.exec(s); if(!m||s.length>254) return 'Enter a valid email address, like name@company.com.'; const domain=m[2].toLowerCase(), labels=domain.split('.'), sld=labels[labels.length-2]; if(looksJunk(m[1])||/^(.)\1+$/u.test(sld)||JUNK_DOMAIN.test(domain)) return 'Enter a real email address, not a placeholder.'; return '';}
+function isClientInfoComplete(){return vOrg(meta.orgName)==='' && vAudience(meta.preparedFor)==='';}
+/* The contact step is explicit: results unlock only after the visitor clicks "See my results" with valid details and the server accepts them. */
+function contactVerified(){return meta.contactVerified===true;}
+let fieldErrorsShown=false;
+function renderFieldErrors(){[['orgName',vOrg],['preparedFor',vAudience]].forEach(([id,fn])=>{const el=$(id), lab=el.parentNode; let sm=lab.querySelector('small.fe'); const msg=fieldErrorsShown?fn(el.value):''; if(msg){ if(!sm){sm=document.createElement('small'); sm.className='fe'; sm.style.cssText='display:block;margin-top:5px;color:#ffd9d4;font-weight:800'; lab.appendChild(sm);} sm.textContent=msg; el.setAttribute('aria-invalid','true'); } else { if(sm) sm.remove(); el.removeAttribute('aria-invalid'); } });}
+/* Used by the contact step: validates the two client fields plus the visitor's own name and email. */
+function joxelValidateContact(name,email){fieldErrorsShown=true; renderFieldErrors(); const errs=[], o=vOrg($('orgName').value), a=vAudience($('preparedFor').value), n=vPersonName(name), e=vEmail(email); if(o) errs.push('Prepared For: '+o); if(a) errs.push('Client Contact / Audience: '+a); if(n) errs.push('Name: '+n); if(e) errs.push('Email: '+e); return {errs, name:n, email:e};}
+function joxelRevealResults(){meta.contactVerified=true; save(); renderDashboard(); const d=$('dashboard'); if(d && !d.hidden) d.scrollIntoView({behavior:'smooth', block:'start'});}
+/* Score/decision/completion for the team notification. Computed without displaying anything. */
+function resultsSummary(){if(!isAssessmentComplete()) return null; const a=rawOverall(), rd=readinessDecision(a), gs=gateStatus(), rs=rows(), ans=rs.filter(x=>x.score>0).length; return {overall:a.toFixed(1), tier:rd[0], decision:gs[0], completion:Math.round(ans/rs.length*100)+'%'};}
+/* Results are available only when every question is answered AND the client information is complete. */
+function canShowResults(){return isAssessmentComplete() && isClientInfoComplete() && contactVerified();}
+function domainAvgs(){return canShowResults()?rawDomainAvgs():[];}
+function overall(){return canShowResults()?rawOverall():null;}
+function rawDomainAvgs(){return domains().map(d => {const r=rows().filter(x=>x.domain===d); const s=r.filter(x=>x.score>0); return {domain:d, avg:s.length?s.reduce((a,b)=>a+b.score,0)/s.length:0, count:s.length, total:r.length};});}
+function rawOverall(){const s=rows().filter(x=>x.score>0); return s.length?s.reduce((a,b)=>a+b.score,0)/s.length:0;}
+function criticalRows(){return rows().filter(x=>x.critical);}
+function failedGates(){return criticalRows().filter(x=>x.score>0 && x.score < APP.config.criticalGateMin);}
+function unscoredGates(){return criticalRows().filter(x=>x.score===0);}
+function readinessDecision(a){const fails=failedGates(); if(!rows().some(x=>x.score>0)) return ['Not Started','Complete scoring to generate decision guidance.']; if(fails.length) return ['Gate Remediation Required', fails.length+' critical gate(s) are below the minimum threshold of '+APP.config.criticalGateMin+'/5.']; if(a>=4.1)return['AI Ready','Capabilities are mature enough to support more advanced AI planning and scaling, subject to leadership review.']; if(a>=3.2)return['Developing','Foundations are emerging; close priority control and adoption gaps before broad implementation.']; if(a>=2.2)return['Foundational','Core governance, data, security, and operating model capabilities need strengthening.']; return['Emerging','Significant readiness work is needed before production AI implementation.'];}
+function gateStatus(){const fails=failedGates(), un=unscoredGates(); if(fails.length) return ['Failed', fails.length+' critical gate(s) below threshold.']; if(un.length) return ['Incomplete', un.length+' critical gate(s) not yet scored.']; return ['Passed','All scored critical gates meet the minimum threshold.'];}
+function initMeta(){if(!meta.preparedBy) meta.preparedBy=APP.config.preparedByDefault; ['orgName','preparedFor','preparedBy','assessmentDate','useCaseDesc'].forEach(id=>{if(meta[id]) $(id).value=meta[id]; const onMeta=e=>{meta[id]=e.target.value; save(); renderDashboard();}; $(id).addEventListener('input', onMeta); $(id).addEventListener('change', onMeta);}); if(!$('preparedBy').value){$('preparedBy').value=APP.config.preparedByDefault; meta.preparedBy=APP.config.preparedByDefault;} if(!$('assessmentDate').value){const d=new Date().toISOString().slice(0,10); $('assessmentDate').value=d; meta.assessmentDate=d; save();}}
+function renderMethod(){$('methodBody').innerHTML=APP.config.methodText.map(x=>`<div class="callout"><strong>${esc(x.heading)}:</strong> ${esc(x.body)}</div>`).join('');}
+function renderGuide(){$('scoringGuide').innerHTML=APP.config.scoringGuide.map(g=>`<article class="score-card"><strong>${g.score}</strong><h3>${esc(g.label)}</h3><p>${esc(g.description)}</p></article>`).join('');}
+function renderTabs(){if(!activeDomain) activeDomain=domains()[0]; $('domainTabs').innerHTML=domains().map(d=>`<button class="tab ${d===activeDomain?'active':''}" data-domain="${esc(d)}">${esc(d)}</button>`).join(''); document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{activeDomain=b.dataset.domain; renderAssessment();});}
+function renderAssessment(){renderTabs(); const r=rows().filter(x=>x.domain===activeDomain); $('questions').innerHTML=r.map(q=>{const buttons=[1,2,3,4,5].map(v=>{const g=guide(v); return `<button class="score-btn ${q.score===v?'active':''}" data-key="${esc(q.key)}" data-score="${v}"><b>${v}</b>${esc(g.label)}<small>${esc(g.description)}</small></button>`;}).join(''); return `<article class="question"><div class="q-top"><div><h3>${esc(q.criterion)} ${q.critical?'<span class="chip red">Critical Gate</span>':''}</h3><p>${esc(q.description)}</p></div><span class="chip">${esc(q.domain)}</span></div><div class="score-row">${buttons}</div><div class="evidence"><label style="color:#33434C;font-weight:800">Evidence Strength<select data-evidence="${esc(q.key)}"><option value="" ${!q.evidenceStrength?'selected':''}>Not selected</option><option value="Low" ${q.evidenceStrength==='Low'?'selected':''}>Low - limited or anecdotal evidence</option><option value="Moderate" ${q.evidenceStrength==='Moderate'?'selected':''}>Moderate - some documentation or examples</option><option value="Strong" ${q.evidenceStrength==='Strong'?'selected':''}>Strong - documented, current, and verifiable evidence</option></select></label><textarea rows="3" placeholder="Notes / evidence" data-note="${esc(q.key)}">${esc(q.notes)}</textarea></div></article>`;}).join(''); document.querySelectorAll('.score-btn').forEach(b=>b.onclick=()=>{state[b.dataset.key]=state[b.dataset.key]||{}; const wasComplete=canShowResults(); state[b.dataset.key].score=Number(b.dataset.score); save(); renderAssessment(); renderDashboard(); if(!wasComplete && canShowResults()){$('dashboard').scrollIntoView({behavior:'smooth', block:'start'});}}); document.querySelectorAll('textarea[data-note]').forEach(t=>t.oninput=()=>{state[t.dataset.note]=state[t.dataset.note]||{}; state[t.dataset.note].notes=t.value; save(); renderDashboard();}); document.querySelectorAll('select[data-evidence]').forEach(s=>s.onchange=()=>{state[s.dataset.evidence]=state[s.dataset.evidence]||{}; state[s.dataset.evidence].evidenceStrength=s.value; save(); renderDashboard();});}
+function clearResults(){['overallScore','tier','tierNote','decision','gateNote'].forEach(id=>{$(id).textContent='';}); $('domainBars').innerHTML=''; $('gaps').innerHTML=''; $('reportBody').innerHTML=''; const c=$('radar'); c.getContext('2d').clearRect(0,0,c.width,c.height);}
+function renderDashboard(){const qDone=isAssessmentComplete(), infoDone=isClientInfoComplete(), verified=contactVerified(), complete=qDone&&infoDone&&verified, total=APP.questions.length, answered=rows().filter(x=>x.score>0).length; renderFieldErrors(); const pn=$('progressNote'); if(pn){ const link=' <a href="#orgName" id="goClientInfo">Go to client information</a>'; pn.innerHTML = complete ? `All ${total} questions answered and contact information verified. Your results are shown at the top of the page.` : (!qDone ? `${answered} of ${total} questions answered. Answer all ${total}, then enter your contact information to see your results.` : (!verified ? `All ${total} questions answered. Next, enter valid client information (Prepared For and Client Contact / Audience) and your contact details below, then click "See my results".${link}` : `Please correct the client information (Prepared For and Client Contact / Audience) to see your results.${link}`)); } ['dashboard','profile','report'].forEach(id=>{const e=$(id); if(e) e.hidden=!complete;}); const viewLink=document.querySelector('a[href="#dashboard"]'); if(viewLink) viewLink.hidden=!complete; $('printBtn').hidden=!complete; document.dispatchEvent(new CustomEvent('joxelAssessmentState',{detail:{complete,qDone,verified}})); if(!complete){clearResults(); return;} const a=overall(), rd=readinessDecision(a), gs=gateStatus(), rs=rows(), ans=rs.filter(x=>x.score>0).length; $('overallScore').textContent=a.toFixed(1); $('tier').textContent=rd[0]; $('tierNote').textContent=rd[1]; $('decision').textContent=gs[0]; $('gateNote').textContent=gs[1]; $('completion').textContent=Math.round(ans/rs.length*100)+'%'; $('answeredCount').textContent=`${ans} of ${rs.length} scored`; renderBars(); renderGaps(); drawRadar(); renderReport();}
+function short(d){return d.replace('Business Strategy & Governance','Strategy & Governance').replace('Technology Infrastructure','Technology').replace('Organization Architecture','Organization');}
+function renderBars(){if(!canShowResults()){$('domainBars').innerHTML=''; return;} $('domainBars').innerHTML=domainAvgs().map(d=>`<div class="domain-bar"><strong>${esc(short(d.domain))}</strong><div class="bar-track"><div class="bar-fill" style="width:${d.avg/5*100}%"></div></div><span>${d.avg.toFixed(1)}</span></div>`).join('');}
+function renderGaps(){if(!canShowResults()){$('gaps').innerHTML=''; return;} const fails=failedGates(); const low=rows().filter(x=>x.score>0).sort((a,b)=>a.score-b.score).slice(0,5); let html=''; if(fails.length) html += fails.map(x=>`<div class="gap fail"><strong>Critical gate below threshold: ${esc(x.criterion)} <span class="chip red">Score ${x.score}/${APP.config.criticalGateMin} minimum</span></strong><p>${esc(x.domain)}. This gate should be reviewed before proceeding.</p></div>`).join(''); if(!fails.length && criticalRows().every(x=>x.score>0)) html += `<div class="gap pass"><strong>Critical gates <span class="chip green">No gate below threshold</span></strong><p>All scored critical gates currently meet the minimum threshold.</p></div>`; html += low.length?low.map((x,i)=>`<div class="gap"><strong>${i+1}. ${esc(x.criterion)} <span class="chip">Score ${x.score}/5</span></strong><p>${esc(x.domain)} ${x.critical?'<span class="chip red">Critical Gate</span>':''}</p></div>`).join(''):'<p class="hint">No scored risks yet. Complete the assessment to identify gates and lowest scored areas.</p>'; $('gaps').innerHTML=html;}
+function drawRadar(){const canvas=$('radar'), ctx=canvas.getContext('2d'), w=canvas.width, h=canvas.height; ctx.clearRect(0,0,w,h); if(!canShowResults()) return; const vals=domainAvgs(), cx=w/2, cy=h/2+10, r=145; ctx.strokeStyle='#DCE7E4'; ctx.fillStyle='#5B6A72'; ctx.font='13px Arial'; for(let ring=1; ring<=5; ring++){ctx.beginPath(); vals.forEach((v,i)=>{const a=-Math.PI/2+i*2*Math.PI/vals.length, rr=r*ring/5, x=cx+Math.cos(a)*rr, y=cy+Math.sin(a)*rr; i?ctx.lineTo(x,y):ctx.moveTo(x,y);}); ctx.closePath(); ctx.stroke();} vals.forEach((v,i)=>{const a=-Math.PI/2+i*2*Math.PI/vals.length; ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(cx+Math.cos(a)*r, cy+Math.sin(a)*r); ctx.stroke(); const lx=cx+Math.cos(a)*(r+62), ly=cy+Math.sin(a)*(r+42); ctx.textAlign=lx<cx?'right':lx>cx?'left':'center'; ctx.fillText(short(v.domain), lx, ly);}); ctx.beginPath(); vals.forEach((v,i)=>{const a=-Math.PI/2+i*2*Math.PI/vals.length, rr=r*v.avg/5, x=cx+Math.cos(a)*rr, y=cy+Math.sin(a)*rr; i?ctx.lineTo(x,y):ctx.moveTo(x,y);}); ctx.closePath(); ctx.fillStyle='rgba(14,124,116,.2)'; ctx.fill(); ctx.strokeStyle='#0E7C74'; ctx.lineWidth=3; ctx.stroke(); ctx.lineWidth=1;}
+function renderReport(){if(!canShowResults()){$('reportBody').innerHTML=''; return;} const m=meta, a=overall(), rd=readinessDecision(a), gs=gateStatus(), av=domainAvgs(), low=rows().filter(x=>x.score>0).sort((a,b)=>a.score-b.score).slice(0,5), fails=failedGates(), evSummary=['Strong','Moderate','Low','Not selected'].map(v=>({label:v,count:rows().filter(x=>(x.evidenceStrength||'Not selected')===v).length})); $('reportBody').innerHTML=`<h3>${esc(m.orgName||'Client Organization')} — AI Readiness Assessment</h3><p><strong>Prepared for:</strong> ${esc(m.preparedFor||m.orgName||'Client organization')}<br><strong>Prepared by:</strong> ${esc(m.preparedBy||APP.config.preparedByDefault)}<br><strong>Date:</strong> ${esc(m.assessmentDate||'')}</p><p><strong>Optional AI Use Case / Focus Area:</strong> ${esc(m.useCaseDesc||'Not provided')}</p><p><strong>Overall score:</strong> ${a.toFixed(1)} / 5.0<br><strong>Readiness decision:</strong> ${esc(rd[0])}<br><strong>Critical gates:</strong> ${esc(gs[0])}</p><p>${esc(rd[1])}</p><h3>Domain Scores</h3><table class="report-table"><tr><th>Domain</th><th>Average</th><th>Completion</th></tr>${av.map(d=>`<tr><td>${esc(d.domain)}</td><td>${d.avg.toFixed(1)}</td><td>${d.count}/${d.total}</td></tr>`).join('')}</table><h3>Evidence Strength Summary</h3><table class="report-table"><tr><th>Evidence Strength</th><th>Count</th></tr>${evSummary.map(e=>`<tr><td>${esc(e.label)}</td><td>${e.count}</td></tr>`).join('')}</table><h3>Critical Gate Findings</h3>${fails.length?`<ul>${fails.map(x=>`<li><strong>${esc(x.criterion)}</strong> — ${esc(x.domain)} — Score ${x.score}/5 — Evidence Strength: ${esc(x.evidenceStrength||'Not selected')}</li>`).join('')}</ul>`:'<p>No scored critical gates are currently below the minimum threshold.</p>'}<h3>Gates and Lowest Scored Areas</h3>${low.length?`<ol>${low.map(x=>`<li><strong>${esc(x.criterion)}</strong> — ${esc(x.domain)} — Score ${x.score}/5 — Evidence Strength: ${esc(x.evidenceStrength||'Not selected')} ${x.critical?'— Critical Gate':''}</li>`).join('')}</ol>`:'<p>No scored risks yet.</p>'}`;}
+function init(){initMeta(); document.addEventListener('click', e=>{const a=e.target.closest&&e.target.closest('#goClientInfo'); if(!a) return; e.preventDefault(); const f=(vOrg($('orgName').value)?$('orgName'):(vAudience($('preparedFor').value)?$('preparedFor'):$('orgName'))); fieldErrorsShown=true; renderFieldErrors(); f.scrollIntoView({behavior:'smooth', block:'center'}); f.focus({preventScroll:true});}); renderMethod(); renderGuide(); renderAssessment(); renderDashboard(); $('startAssessment').onclick=e=>{e.preventDefault(); $('assessment').scrollIntoView({behavior:'smooth', block:'start'});}; $('printBtn').onclick=()=>window.print(); $('resetBtn').onclick=()=>{if(confirm('Clear all saved responses in this browser?')){localStorage.removeItem('joxelAIReadyStateMasterConsultantEvidenceV8'); localStorage.removeItem('joxelAIReadyMetaMasterConsultantEvidenceV8'); location.reload();}};}
+document.addEventListener('DOMContentLoaded', init);
+</script>
+<script>
+/* Lead-capture / submission step (added on integration). Collects name + email,
+   reads the already-computed score summary from the dashboard, and POSTs to the
+   same-origin WordPress REST endpoint which emails The Joxel Group. Scoring,
+   localStorage, export and print are untouched. */
+(function () {
+  var qs = new URLSearchParams(location.search);
+  var CFG = { api: (qs.get('api') || '/wp-json/joxel/v1/'), nonce: '', siteKey: '' };
+  if (CFG.api.slice(-1) !== '/') { CFG.api += '/'; }
+  var widgetId = null;
+  function id(x) { return document.getElementById(x); }
+  function val(x) { var e = id(x); return e ? (e.value !== undefined ? e.value : e.textContent) : ''; }
+  function setMsg(t, ok) { var m = id('jxsub-msg'); if (!m) { return; } m.textContent = t || ''; m.style.color = ok ? '#0A5A54' : '#b3261e'; }
+
+  document.head.insertAdjacentHTML('beforeend', '<style>@media print{#joxelSubmitPanel{display:none !important}}</style>');
+
+  var panel = document.createElement('section');
+  panel.id = 'joxelSubmitPanel';
+  /* Contact step: shown once all questions are answered and until the visitor's contact details are accepted. */
+  var thanked = false;
+  function complete() { return typeof isAssessmentComplete === 'function' && isAssessmentComplete(); }
+  panel.hidden = !(complete() && !contactVerified());
+  document.addEventListener('joxelAssessmentState', function (e) { var d = e.detail || {}; panel.hidden = thanked ? false : !(d.qDone && !d.verified); });
+  panel.style.cssText = 'max-width:900px;margin:2rem auto;padding:1.6rem;border:1px solid #DCE7E4;border-radius:14px;background:#fff;box-shadow:0 4px 10px rgba(60,70,80,.05)';
+  panel.innerHTML =
+    '<h2 style="margin:0 0 .3rem;color:#0A5A54">Almost done: enter your contact details to see your results</h2>'
+    + '<p style="color:#5B6A72;margin:.25rem 0 1rem">Enter your real name and email, then click &ldquo;See my results&rdquo;. A summary is also sent to The Joxel Group so our team can follow up with tailored guidance on your AI readiness. Your answers stay saved in this browser.</p>'
+    + '<div id="joxelSubmitForm">'
+    + '<label for="jxsub-name" style="display:block;margin:.4rem 0 .2rem;font-weight:800;color:#33434C">Name</label>'
+    + '<input id="jxsub-name" type="text" autocomplete="name" style="width:100%;max-width:440px" />'
+    + '<label for="jxsub-email" style="display:block;margin:.7rem 0 .2rem;font-weight:800;color:#33434C">Email</label>'
+    + '<input id="jxsub-email" type="email" autocomplete="email" style="width:100%;max-width:440px" />'
+    + '<input id="jxsub-hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />'
+    + '<div id="jxsub-recaptcha" style="margin:1rem 0"></div>'
+    + '<div id="jxsub-msg" role="status" aria-live="polite" style="margin:.5rem 0;font-weight:600;white-space:pre-line"></div>'
+    + '<button id="jxsub-btn" type="button" class="primary" style="background:#0E7C74;color:#fff;border:none;border-radius:10px;padding:.8rem 1.4rem;font-weight:700;cursor:pointer">See my results</button>'
+    + '</div>';
+
+  function place() {
+    var rb = id('reportBody');
+    var anchor = rb ? (rb.closest('section') || rb.parentNode) : null;
+    if (anchor && anchor.parentNode) { anchor.parentNode.insertBefore(panel, anchor.nextSibling); }
+    else { document.body.appendChild(panel); }
+  }
+  if (document.readyState !== 'loading') { place(); } else { document.addEventListener('DOMContentLoaded', place); }
+
+  fetch(CFG.api + 'config', { credentials: 'same-origin' }).then(function (r) { return r.json(); }).then(function (j) {
+    CFG.nonce = j.nonce || ''; CFG.siteKey = j.recaptchaSiteKey || '';
+    if (CFG.siteKey) {
+      window.__jxAiRc = function () { try { widgetId = grecaptcha.render('jxsub-recaptcha', { sitekey: CFG.siteKey }); } catch (e) {} };
+      var s = document.createElement('script');
+      s.src = 'https://www.google.com/recaptcha/api.js?onload=__jxAiRc&render=explicit';
+      s.async = true; s.defer = true; document.head.appendChild(s);
+    }
+  }).catch(function () {});
+
+  function submit() {
+    if (!complete()) { panel.hidden = true; setMsg('Please answer all questions before submitting your results.', false); return; }
+    var name = (val('jxsub-name') || '').trim(), email = (val('jxsub-email') || '').trim();
+    /* Reject blank and obviously junk contact details (client fields, name and email) before anything is sent. */
+    var v = joxelValidateContact(name, email);
+    id('jxsub-name').setAttribute('aria-invalid', v.name ? 'true' : 'false'); id('jxsub-email').setAttribute('aria-invalid', v.email ? 'true' : 'false');
+    if (v.errs.length) { setMsg('Please correct the following to see your results:\n• ' + v.errs.join('\n• '), false); return; }
+    var token = ''; try { token = (widgetId !== null && window.grecaptcha) ? grecaptcha.getResponse(widgetId) : ''; } catch (e) {}
+    if (CFG.siteKey && !token) { setMsg('Please complete the reCAPTCHA.', false); return; }
+    var btn = id('jxsub-btn'), orig = btn.textContent; btn.disabled = true; btn.textContent = 'Sending…'; setMsg('');
+    fetch(CFG.api + 'ai-readiness', {
+      method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        nonce: CFG.nonce, website: (val('jxsub-hp') || ''), recaptcha: token,
+        contact: { name: name, email: email },
+        summary: Object.assign({ organization: (val('orgName') || '').trim() }, resultsSummary(), (function () {
+          /* Per-domain results for the team notification. Must never block a submission: on any error only the summary is sent. */
+          try {
+            return {
+              domains: rawDomainAvgs().map(function (d) { return { domain: d.domain, avg: d.avg, scored: d.count, total: d.total }; }),
+              failed_gates: failedGates().map(function (x) { return x.criterion; }),
+              lowest: rows().filter(function (x) { return x.score > 0; }).sort(function (a, b) { return a.score - b.score; }).slice(0, 5).map(function (x) { return { criterion: x.criterion, score: x.score }; })
+            };
+          } catch (e) { return {}; }
+        })())
+      })
+    }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (res) {
+        if (res.ok && res.j && res.j.ok) {
+          id('joxelSubmitForm').innerHTML = '<div style="background:rgba(14,124,116,.10);border:1px solid rgba(14,124,116,.3);border-radius:10px;padding:1rem;color:#0A5A54;font-weight:600">Thank you — your contact information was received and your results are now shown at the top of the page. A summary has also been sent to The Joxel Group, and we will be in touch shortly.</div>';
+          thanked = true; panel.hidden = false;
+          joxelRevealResults();
+        } else {
+          btn.disabled = false; btn.textContent = orig;
+          setMsg((res.j && res.j.message) || 'Sorry, we could not send that just now. Please try again.', false);
+          if (window.grecaptcha && widgetId !== null) { try { grecaptcha.reset(widgetId); } catch (e) {} }
+        }
+      }).catch(function () { btn.disabled = false; btn.textContent = orig; setMsg('Sorry, we could not send that just now. Please try again.', false); });
+  }
+  document.addEventListener('click', function (e) { if (e.target && e.target.id === 'jxsub-btn') { submit(); } });
+})();
+</script>
+</body>
+</html>
